@@ -23,7 +23,7 @@ const getJob = async (request, response) => {
 }
 
 const createJob = async (request, response) => {
-    request.createdBy = request.user.userId;
+    request.body.createdBy = request.user.userId;
     const job = await Job.create(request.body);
 
     response.status(StatusCodes.CREATED).json({ job });
