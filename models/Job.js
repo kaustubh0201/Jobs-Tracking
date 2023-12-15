@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const JobSchema = new mongoose.Schema({
     company: {
-        tyep: String,
+        type: String,
         required: [true, 'Please provide company name!'],
         maxlength: 50
     },
