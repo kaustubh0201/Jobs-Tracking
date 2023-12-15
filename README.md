@@ -49,3 +49,71 @@ Also put the JWT_SECRET and JWT_LIFETIME in this file.
 ```
 
 ---
+
+## Database
+
+---
+
+* **User Schema**
+
+```sh 
+{
+   name: {
+       type: String,
+       required: [true, 'Please provide the name!'],
+       minlength: 3,
+       maxlength: 50
+   },
+
+   email: {
+       type: String,
+       required: [true, 'Please provide the email!'],
+       match: [
+           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+           'Please provide valid email'
+       ],
+       unique: true
+   },
+
+   password: {
+       type: String,
+       required: [true, 'Please provide the password!'],
+       minlength: 6
+   }
+}
+```
+
+---
+
+* **Job Schema**
+```sh 
+{
+    company: {
+        type: String,
+        required: [true, 'Please provide company name!'],
+        maxlength: 50
+    },
+
+    position: {
+        type: String,
+        required: [true, 'Please provide position!'],
+        maxlength: 100
+    },
+
+    status: {
+        type: String,
+        enum: ['interview', 'declined', 'pending'],
+        default: 'pending'
+    },
+
+    createdBy: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+        required: [true, 'Please provide the user!']
+    }
+}, {
+    timestamps: true
+}
+```
+
+---
