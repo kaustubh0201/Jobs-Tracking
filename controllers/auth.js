@@ -27,6 +27,8 @@ const login = async (request, response) => {
         throw new UnauthenticatedError('Invalid credentials!');
     }
 
+    const token = user.createJWT();
+
     response.status(StatusCodes.OK).json({ user: { name: user.name }, token });
 }
 
