@@ -34,7 +34,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ```sh
 > git clone https://github.com/kaustubh0201/Jobs-Tracking.git
-> cd Task-Manager
+> cd Jobs-Tracking
 > npm install
 ```
 
