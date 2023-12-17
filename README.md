@@ -1,5 +1,7 @@
 # Jobs-Tracking
 APIs made for tracking job applications using NodeJS, Express, Mongoose and JWT has been used for authentication.
+<br><br>
+The front-end application for this service can be found <a href="https://github.com/kaustubh0201/Jobs-Tracking-Front-end">here</a>.
 
 ---
 ## Requirements
